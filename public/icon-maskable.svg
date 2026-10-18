@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="mBgGlow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a382b" />
+      <stop offset="60%" stop-color="#041e17" />
+      <stop offset="100%" stop-color="#02100c" />
+    </radialGradient>
+
+    <!-- Gold Gradient -->
+    <linearGradient id="mGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e1a4" />
+      <stop offset="35%" stop-color="#dfb746" />
+      <stop offset="70%" stop-color="#c59b27" />
+      <stop offset="100%" stop-color="#8f6c13" />
+    </linearGradient>
+
+    <!-- Inner Glow -->
+    <radialGradient id="mLanternGlow" cx="50%" cy="45%" r="35%">
+      <stop offset="0%" stop-color="#f5e1a4" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#dfb746" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#041e17" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="mShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Full-bleed background without border radius for maskable android icons -->
+  <rect width="512" height="512" fill="url(#mBgGlow)" />
+
+  <!-- Outer Islamic subtle geometric tile lines -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="url(#mGoldGrad)" stroke-width="1.5" stroke-opacity="0.15" />
+  <circle cx="256" cy="256" r="195" fill="none" stroke="url(#mGoldGrad)" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4,8" />
+
+  <!-- Ambient Light from Arch (Safe zone centered) -->
+  <circle cx="256" cy="245" r="130" fill="url(#mLanternGlow)" />
+
+  <!-- Scale entire emblem down to fit inside 80% safe zone circle (radius 200 around 256, 256) -->
+  <g transform="translate(256, 256) scale(0.76) translate(-256, -240)">
+    <!-- Outer Architectural Islamic Arch Border -->
+    <path d="M 128 390 L 128 230 C 128 160 190 100 256 75 C 322 100 384 160 384 230 L 384 390 Z" 
+          fill="none" 
+          stroke="url(#mGoldGrad)" 
+          stroke-width="3.5" 
+          stroke-opacity="0.5" />
+
+    <!-- Inner Architectural Arch -->
+    <path d="M 148 385 L 148 238 C 148 180 198 126 256 102 C 314 126 364 180 364 238 L 364 385" 
+          fill="#042018" 
+          fill-opacity="0.65"
+          stroke="url(#mGoldGrad)" 
+          stroke-width="5"
+          filter="url(#mShadow)" />
+
+    <!-- Islamic 8-Pointed Star (Rub el Hizb) Centerpiece -->
+    <g transform="translate(256, 215) scale(1.15)">
+      <!-- Square 1 -->
+      <rect x="-38" y="-38" width="76" height="76" rx="6"
+            fill="none" 
+            stroke="url(#mGoldGrad)" 
+            stroke-width="5" />
+      <!-- Square 2 rotated 45 deg -->
+      <rect x="-38" y="-38" width="76" height="76" rx="6" transform="rotate(45)" 
+            fill="none" 
+            stroke="url(#mGoldGrad)" 
+            stroke-width="5" />
+      <!-- Center Jewel Circle -->
+      <circle cx="0" cy="0" r="18" fill="url(#mGoldGrad)" />
+      <circle cx="0" cy="0" r="8" fill="#041611" />
+    </g>
+
+    <!-- Open Mushaf / Quran Book Baseline -->
+    <g transform="translate(256, 335) scale(0.95)" filter="url(#mShadow)">
+      <!-- Left Page -->
+      <path d="M -12 10 C -45 0 -85 5 -105 18 C -105 5 -95 -25 -10 -20 Z" 
+            fill="url(#mGoldGrad)" />
+      <!-- Right Page -->
+      <path d="M 12 10 C 45 0 85 5 105 18 C 105 5 95 -25 10 -20 Z" 
+            fill="url(#mGoldGrad)" />
+      <!-- Book Spine / Stand -->
+      <path d="M -18 12 L 0 26 L 18 12 L 28 32 L -28 32 Z" 
+            fill="url(#mGoldGrad)" 
+            opacity="0.85" />
+    </g>
+
+    <!-- Islamic Arch Top Finial Ornament -->
+    <circle cx="256" cy="62" r="7" fill="url(#mGoldGrad)" />
+    <path d="M 256 46 L 256 62" stroke="url(#mGoldGrad)" stroke-width="3" stroke-linecap="round" />
+    <circle cx="256" cy="44" r="3.5" fill="url(#mGoldGrad)" />
+  </g>
+</svg>

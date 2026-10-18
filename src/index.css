@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Alexandria', 'Cairo', system-ui, -apple-system, sans-serif;
+    --font-display: 'Reem Kufi', 'Amiri', 'Cairo', serif;
+    --font-quran: 'Amiri', 'Traditional Arabic', serif;
+
+    /* Theme colors */
+    --color-emerald-deep: #041611;
+    --color-emerald-forest: #03130e;
+    --color-emerald-surface: #07221a;
+    --color-emerald-card: #0a2d23;
+    --color-emerald-border: rgba(197, 155, 39, 0.22);
+
+    --color-gold-accent: #c59b27;
+    --color-gold-bright: #d4af37;
+    --color-gold-glow: rgba(212, 175, 55, 0.15);
+
+    --color-ivory-bg: #fbf8f2;
+    --color-ivory-surface: #ffffff;
+    --color-ivory-card: #f6f1e7;
+    --color-ivory-border: #e7dfd1;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    direction: rtl;
+    text-align: right;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    background-color: #041611;
+    color: #fbf8f2;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-quran {
+  font-family: var(--font-quran);
+  line-height: 2.3;
+}
+
+/* Islamic Geometric Subtle Background Pattern (Girih / Khatam star 8-point motif) */
+.islamic-pattern-bg {
+  background-image: radial-gradient(circle at 50% 50%, rgba(197, 155, 39, 0.04) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c59b27' stroke-width='0.6' stroke-opacity='0.045'%3E%3Cpolygon points='40,6 48,22 64,14 56,30 72,38 56,46 64,62 48,54 40,70 32,54 16,62 24,46 8,38 24,30 16,14 32,22'/%3E%3Ccircle cx='40' cy='40' r='18'/%3E%3Ccircle cx='40' cy='40' r='34' stroke-dasharray='2,3'/%3E%3Cpath d='M0,0 L80,80 M80,0 L0,80' stroke-opacity='0.02'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+/* Subtle Mashrabiya Lattice Pattern for Panels */
+.mashrabiya-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c59b27' stroke-width='0.5' stroke-opacity='0.05'%3E%3Crect x='10' y='10' width='20' height='20' transform='rotate(45 20 20)'/%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3Ccircle cx='0' cy='0' r='4'/%3E%3Ccircle cx='40' cy='0' r='4'/%3E%3Ccircle cx='0' cy='40' r='4'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+/* Warm Lantern Radial Glow */
+.lantern-glow-center {
+  background: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(212, 175, 55, 0.12) 0%, rgba(10, 45, 35, 0.35) 55%, transparent 75%);
+}
+
+.lantern-glow-prayer {
+  background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(212, 175, 55, 0.14) 0%, rgba(7, 34, 26, 0.8) 60%, transparent 100%);
+}
+
+/* Architectural Islamic Arch Motifs */
+.islamic-arch {
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+}
+
+.islamic-arch-sm {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+/* Gilded Manuscript Frame */
+.manuscript-border {
+  position: relative;
+  border: 1px solid rgba(197, 155, 39, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(4, 22, 17, 0.6);
+}
+
+.manuscript-border::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(197, 155, 39, 0.09);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Gold Accent Corner Marks for Luxury Cards */
+.gold-corner-bracket {
+  position: relative;
+}
+.gold-corner-bracket::before,
+.gold-corner-bracket::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-color: rgba(197, 155, 39, 0.45);
+  pointer-events: none;
+}
+.gold-corner-bracket::before {
+  top: 6px;
+  right: 6px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+.gold-corner-bracket::after {
+  bottom: 6px;
+  left: 6px;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+/* Warm Gold Glow Hover Effect */
+.hover-gold-glow {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-gold-glow:hover {
+  border-color: rgba(197, 155, 39, 0.45);
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.12);
+}
+
+/* Luxury Quran Manuscript Paper Styling */
+.quran-paper-dark {
+  background: linear-gradient(180deg, #061f18 0%, #041712 100%);
+  border: 1px solid rgba(197, 155, 39, 0.28);
+}
+.quran-paper-light {
+  background: linear-gradient(180deg, #fdfaf3 0%, #f6f0e4 100%);
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  color: #1a1714;
+}
+
+/* Modern Premium Light Mode Overrides */
+html.light body {
+  background-color: #fbf8f2 !important;
+  color: #1a1e1b !important;
+}
+
+html.light .islamic-pattern-bg {
+  background-image: radial-gradient(circle at 50% 50%, rgba(197, 155, 39, 0.04) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%238c6b1b' stroke-width='0.6' stroke-opacity='0.05'%3E%3Cpolygon points='40,6 48,22 64,14 56,30 72,38 56,46 64,62 48,54 40,70 32,54 16,62 24,46 8,38 24,30 16,14 32,22'/%3E%3Ccircle cx='40' cy='40' r='18'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+html.light header {
+  background-color: rgba(251, 248, 242, 0.94) !important;
+  border-color: #e8ded1 !important;
+}
+
+html.light nav {
+  background-color: rgba(251, 248, 242, 0.96) !important;
+  border-color: #e8ded1 !important;
+}
+
+html.light .bg-stone-950,
+html.light .bg-stone-900,
+html.light .bg-stone-900\/90,
+html.light .bg-stone-900\/85,
+html.light .bg-stone-900\/80,
+html.light .bg-stone-900\/70,
+html.light .bg-stone-900\/60 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-stone-800,
+html.light .bg-stone-800\/80,
+html.light .bg-stone-800\/70,
+html.light .bg-stone-800\/60,
+html.light .bg-stone-800\/50,
+html.light .bg-stone-800\/40 {
+  background-color: #f7f3ea !important;
+}
+
+html.light .bg-stone-700 {
+  background-color: #ede5d8 !important;
+}
+
+html.light .border-stone-800,
+html.light .border-stone-700,
+html.light .border-stone-800\/80,
+html.light .border-stone-800\/60,
+html.light .border-stone-700\/80,
+html.light .border-stone-700\/60,
+html.light .border-emerald-900\/40,
+html.light .border-emerald-900\/50 {
+  border-color: #e8ded1 !important;
+}
+
+html.light .text-white,
+html.light .text-stone-100 {
+  color: #17211b !important;
+}
+
+html.light .text-stone-200,
+html.light .text-stone-300 {
+  color: #35423b !important;
+}
+
+html.light .text-stone-400 {
+  color: #637269 !important;
+}
+
+html.light .hover\:bg-stone-700:hover,
+html.light .hover\:bg-stone-800:hover {
+  background-color: #eee7da !important;
+}
+
+/* Light Mode Overrides for Deep Emerald & Manuscripts */
+html.light .bg-\[\#041611\],
+html.light .bg-\[\#03130e\],
+html.light .bg-\[\#03150f\],
+html.light .bg-\[\#041712\],
+html.light .bg-\[\#041913\] {
+  background-color: #f7f3ea !important;
+}
+
+html.light .bg-\[\#051c15\],
+html.light .bg-\[\#062017\],
+html.light .bg-\[\#07241c\],
+html.light .bg-\[\#062017\]\/85,
+html.light .bg-\[\#062017\]\/80,
+html.light .bg-\[\#062017\]\/70,
+html.light .bg-\[\#062017\]\/60 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-\[\#082a20\],
+html.light .bg-\[\#093527\],
+html.light .bg-\[\#0a3528\],
+html.light .bg-\[\#0a382c\] {
+  background-color: #f0eae0 !important;
+}
+
+html.light .text-\[\#fbf8f2\] {
+  color: #14241d !important;
+}
+
+html.light .text-\[\#ded3c0\] {
+  color: #3b4941 !important;
+}
+
+html.light .text-\[\#ded3c0\]\/85,
+html.light .text-\[\#ded3c0\]\/80,
+html.light .text-\[\#ded3c0\]\/75,
+html.light .text-\[\#ded3c0\]\/70 {
+  color: #55665d !important;
+}
+
+html.light .manuscript-border {
+  border-color: rgba(197, 155, 39, 0.35) !important;
+  box-shadow: 0 10px 30px -10px rgba(180, 160, 130, 0.25) !important;
+}
+
+/* Custom scrollbars in Islamic Muted Gold */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(4, 22, 17, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 155, 39, 0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 155, 39, 0.6);
+}

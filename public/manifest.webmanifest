@@ -1,0 +1,61 @@
+{
+  "id": "/",
+  "name": "إتقان | رفيق الإنتاجية والقرآن الكريم",
+  "short_name": "إتقان",
+  "description": "منظومة إسلامية متكاملة لتنظيم الوقت، المصحف الشريف بتلاوات وتفاسير، مواقيت الصلاة الدقيقة في مصر، مؤقت بومودورو للتركيز، وأذكار حصن المسلم.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#041611",
+  "theme_color": "#041611",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["productivity", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "المصحف الشريف",
+      "short_name": "المصحف",
+      "url": "/?tab=quran",
+      "description": "قراءة وتلاوة آيات القرآن الكريم"
+    },
+    {
+      "name": "مواقيت الصلاة",
+      "short_name": "الصلاة",
+      "url": "/?tab=dashboard",
+      "description": "مواقيت الصلاة بتوقيت جمهورية مصر العربية"
+    },
+    {
+      "name": "مؤقت التركيز",
+      "short_name": "التركيز",
+      "url": "/?tab=timer",
+      "description": "مؤقت بومودورو القرآني للإنتاجية"
+    },
+    {
+      "name": "حصن المسلم",
+      "short_name": "الأذكار",
+      "url": "/?tab=hisn",
+      "description": "أذكار الصباح والمساء وحصن المسلم"
+    }
+  ]
+}
